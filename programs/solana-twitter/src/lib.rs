@@ -15,12 +15,12 @@ pub mod solana_twitter {
 
         if topic.chars().count() > 50 {
             // Return a error...
-            return Err(ErrorCode::TopicTooLong.into())
+            return Err(error!(ErrorCode::TopicTooLong.into()))
         }
     
         if content.chars().count() > 280 {
             // Return a error...
-            return Err(ErrorCode::ContentTooLong.into())
+            return Err(error!(ErrorCode::ContentTooLong.into()))
         }
 
         tweet.author = *author.key;
